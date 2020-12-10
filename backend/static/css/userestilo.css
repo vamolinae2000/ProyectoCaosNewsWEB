@@ -1,0 +1,63 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    background-color:rgba(0,0,0,0.6);;
+    width: auto;
+}
+.my-navbar{
+    opacity: 0.8;
+}
+.der {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    height: 50px;
+    color: aliceblue;
+    width: 50px;
+}
+.container {
+    top: 30px;
+    width: 406px;
+    max-width: 406px;
+    margin: 0 auto;
+    background-position: center;
+}
+#signup {
+    padding: 0px 25px 25px;
+    background: #fff;
+   
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+    position: static;
+    opacity: 0.8;
+}
+#signup .header {
+    margin-bottom: 20px;
+}
+
+
+#signup .sep {
+    height: 1px;
+    background: #e8e8e8;
+    width: 550px;
+    margin: 0px -25px;
+}
+
+#signup1 {
+    padding: 0px 25px 25px;
+    background: #fff;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+    position: static;
+    opacity: 0.8;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<title>Login</title>
+</head>
+
+<style>
+    body{
+        background-color:rgba(0,0,0,0.6);;
+    }
+    .my-navbar{
+        opacity: 0.8;
+    }
+    .der {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        height: 50px;
+        color: aliceblue;
+        width: 50px;
+    }
+    .container {
+        top: 30px;
+        width: 700px;
+        max-width: 406px;
+        margin: 0 auto;
+        background-position: center;
+    }
+    #signup {
+        padding: 0px 25px 25px;
+        background: #fff;
+        box-shadow: 
+            0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+            0px 4px 20px rgba( 0,0,0,0.33 );
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        display: table;
+        position: static;
+        opacity: 0.8;
+    }
+    #signup .header {
+        margin-bottom: 20px;
+    }
+
+    
+
+    #signup .sep {
+        height: 1px;
+        background: #e8e8e8;
+        width: 406px;
+        margin: 0px -25px;
+    }
+
+
+    
+
+    
+
+    
+</style>
+<body background="https://image.freepik.com/foto-gratis/textura-marmol-azul-fondo-diseno_34936-517.jpg">
+    <header>
+		
+        <nav id="menu" class="navbar navbar-expand-md navbar-white bg-dark my-navbar">
+            </i>
+                  <img alt="Brand" width="80" src="https://www.flaticon.es/svg/static/icons/svg/1042/1042680.svg">
+                  
+                </a>
+                <a class="navbar-brand" style="color:white" href="#">CaosNews </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav mr-auto"></div>
+					  <div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ">
+						
+						<div class="der">
+							<ul  class="btn btn-sm btn-outline-secondary" type="button">
+								<li><img width="30" src="https://www.flaticon.es/svg/static/icons/svg/1057/1057231.svg" alt="">
+									<a style="color:white" href="/Usuario/">Registrarse</a>
+								</li>
+								  </ul>
+							</ul>
+						</div>
+					
+        </nav>
+    </header>
+    <h1></h1>
+    <div class="container">
+		<form id="signup">
+			<div class="header">
+				<h3>Autenticación</h3>
+			</div>
+			
+			<div class="sep"></div>
+	
+			<div class="inputs">
+                <div class="inputs">
+                    <div class="main-login main-center">
+                        <form class="form-horizontal" method="post" action="/GuardarUsuario/">
+                        </form>
+                      </div>
+
+                      <form method="POST">
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                        <button class="btn btn-primary btn-lg btn-block login-button" type="submit">Login</button>
+                    </form>
+                    
+                    <a href="/Usuario/">Registrar usuario</a>
+                       
+                  
+          
+                
+                </div>
+
+                </form>
+</div>
+	
+</form>
+
+</div>
+<footer class="footer">
+  <nav id="menu" class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+      <span class="text-muted">Copyright 2020 <i class="fa fa-copyright" aria-hidden="true"></i></span>
+      <span class="text-muted"><a href="#">Show Details</a></span>
+      <span class="text-muted right-align">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+      </span>
+  </div></nav>
+</footer>
+</body>
+</html>
+
+

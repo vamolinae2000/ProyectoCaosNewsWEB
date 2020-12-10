@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="Usuario/static/css/estilo.css">
+    <title>Caos News</title>
+</head>
+
+<style>
+    .carousel-item{
+     width:100%;
+     max-height: 500px;
+}
+    .form{
+        background-color: #202020;
+    }
+</style>
+
+<body  background="https://image.freepik.com/foto-gratis/textura-marmol-azul-fondo-diseno_34936-517.jpg">
+  <!--Menu con logo-->
+    <header>
+        <nav id="menu" class="navbar navbar-expand-md navbar-dark bg-dark">
+            </i>
+                  <img alt="Brand" width="80" src="https://www.flaticon.es/svg/static/icons/svg/1042/1042680.svg">
+                  
+                </a>
+                <a class="navbar-brand" background="white" href="#">CaosNews </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mr-auto"></div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav mr-auto">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/MenuUsuario/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/index/">Galeria</a>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                      
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Periodistas</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="/listadoPeriodista/">Juan Rodrigo Araya</a>
+                      <a class="dropdown-item" href="/listadoPeriodista/">Felipe Avello</a>
+                      <a class="dropdown-item" href="/listadoPeriodista/">Diana Bolocco</a>
+                      <a class="dropdown-item" href="/listadoPeriodista/">Catalina Edwards</a>
+                      <a class="dropdown-item" href="/listadoPeriodista/">Isabel Morel</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Categoria</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="/index/">Economía</a>
+                      <a class="dropdown-item" href="/index/">Política</a>
+                      <a class="dropdown-item" href="/index/">Salud</a>
+                      <a class="dropdown-item" href="/index/">Educación</a>
+                      <a class="dropdown-item" href="/index/">Pymes</a>
+                      <a class="dropdown-item" href="/index/">Salud</a>
+                      <a class="dropdown-item" href="/index/">Coronavirus</a>
+                    </div>
+                  </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <form class="form-inline">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          </form>
+    </ul>
+    <div class="der">
+        <ul  class="btn btn-sm btn-outline-secondary" type="button">
+            <li><img width="30" src="https://www.flaticon.es/svg/static/icons/svg/1057/1057231.svg" alt="">
+                <a style="color:white" href="/login/">Login</a>
+            </li>
+              </ul>
+        </ul>
+    </div>
+    
+        </nav>
+    </header>
+    <h1 class="text-center">Listado de Periodistas Registrados</h1>
+        <h1></h1>
+        <div class="table-responsive" id="mydatatable-container">
+            <table class="records_list table table-striped table-bordered table-hover" id="mydatatable"><i class="table table-responsive"></i>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                
+                  <tbody>
+                      {% for Periodista in Periodistas %}
+                     <tr>
+                          <td >{{Periodista.email}}</td>
+                          <td >{{Periodista.nombre}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+  
+      
+         
+          
+          <style>
+          
+              #mydatatable tfoot input{
+                  width: 100% !important;
+              }
+              #mydatatable tfoot {
+                  display: table-header-group !important;
+              }
+              </style>
+              
+              <script type="text/javascript">
+              $(document).ready(function() {
+                  $('#mydatatable tfoot th').each( function () {
+                      var title = $(this).text();
+                      $(this).html( '<input type="text" placeholder="Filtrar.." />' );
+                  } );
+              
+                  var table = $('#mydatatable').DataTable({
+                      "dom": 'B<"float-left"i><"float-right"f>t<"float-left"l><"float-right"p><"clearfix">',
+                      "responsive": false,
+                      "language": {
+                          "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+                      },
+                      "order": [[ 0, "desc" ]],
+                      "initComplete": function () {
+                          this.api().columns().every( function () {
+                              var that = this;
+              
+                              $( 'input', this.footer() ).on( 'keyup change', function () {
+                                  if ( that.search() !== this.value ) {
+                                      that
+                                          .search( this.value )
+                                          .draw();
+                                      }
+                              });
+                          })
+                      }
+                  });
+              });
+              </script>
+                  
+              </body>
+              </html>
+      </div>
+  
+      
+      <footer class="footer">
+          <nav id="menu" class="navbar navbar-expand-md navbar-dark bg-dark">
+          <div class="container">
+              <span class="text-muted">Copyright 2020 <i class="fa fa-copyright" aria-hidden="true"></i></span>
+              <span class="text-muted"><a href="#">Show Details</a></span>
+              <span class="text-muted right-align">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+              </span>
+          </div></nav>
+      </footer>
+  
+  
+      
+      
+  
+  
+      <!--Estas son las Librerías.-->
+      
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+  
+  </html>

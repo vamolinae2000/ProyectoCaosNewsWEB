@@ -1,0 +1,157 @@
+{% load static %}
+{% static 'img' as base_url%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Album example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container{
+            opacity: 0.8px;
+        }
+
+        
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/album.css' %}" rel="stylesheet">
+</head>
+
+<body background="https://image.freepik.com/foto-gratis/textura-marmol-azul-fondo-diseno_34936-517.jpg">
+    <header>
+        <header>
+            <nav id="menu" class="navbar navbar-expand-md navbar-dark bg-dark">
+                </i>
+                      <img alt="Brand" width="80" src="https://www.flaticon.es/svg/static/icons/svg/1042/1042680.svg">
+                      
+                    </a>
+                    <a class="navbar-brand" background="white" href="#">CaosNews </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                  
+            </nav>
+        
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Add some information about the album below, the author, or any other
+                            background context. Make it a few sentences long so folks can pick up some informative
+                            tidbits. Then, link them off to some social networking sites or contact information.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><a href="#" class="text-white">Like on Facebook</a></li>
+                            <li><a href="#" class="text-white">Email me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </header>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container{
+            opacity: 0.8px;
+        }
+
+        
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/album.css' %}" rel="stylesheet">
+
+    <main role="main">
+
+     
+        
+        <div class="container">
+        <h1 style="color:rgb(0, 0, 0)" class="text-center">Galeria de imagenes</h1>
+            <div class="row">
+
+                {% for i in imagenes %}
+                <!--Card para datos de imagen-->
+                <div class="col-lg-3 col-md-4 col-sm-6" data-toggle="modal" data-target="#modal">
+                    <div class="img-thumbnail my-3">
+                        <a href="/verImagen/{{i.idImagen}}" data-slide-to="0"><img src="../static/img/{{i.nombre}}" width="500" class="zoom img-fluid " alt="">
+                        <div class="card-body">
+                            <div class="btn-group">
+                                <a href="/verImagen/{{i.idImagen}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">{{i.fechaRegistro}}</small>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!--FIN Card para datos de imagen-->
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+
+</main>
+
+    <button class="btn btn-dark" >
+        <a style="color: white;" class="nav-link" href="/MenuAdmin/">volver</a>
+     </li>
+       </ul>
+    </button>
+    <footer class="footer">
+        <nav id="menu" class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <span class="text-muted">Copyright 2020 <i class="fa fa-copyright" aria-hidden="true"></i></span>
+            <span class="text-muted"><a href="#">Show Details</a></span>
+            <span class="text-muted right-align">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </span>
+        </div></nav>
+    </footer>
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+</html>
